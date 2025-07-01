@@ -1,0 +1,662 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <title>Taller Biela</title>
+
+    <!-- Font Awesome CDN for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600;700&display=swap');
+
+/* Reset de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo base de la página */
+body {
+    background-color: #f8f9fa;
+    color: #343a40;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+/* Contenedor principal */
+.cont {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Align items for same height */
+    text-align: center;
+    flex-wrap: wrap; 
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1.5rem;
+}
+
+/* Menú de navegación */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Logo */
+.menu img {
+    width: 100px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.menu img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo de los enlaces en el menú */
+nav a {
+    margin-left: 0.5rem;
+    text-decoration: none;
+    color: white;
+    background-color: #E63946; /* Strong Red */
+    padding: 1rem 1.1rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #d62828;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Sección de inicio */
+.inicio {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(taller-portada.png) center/cover no-repeat;
+    padding: 8vw 5vw;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.txt {
+    max-width: 800px;
+}
+
+/* Texto dentro de inicio */
+.txt h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.txt p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin: 1rem 0 2rem;
+}
+
+/* Botones */
+.bt {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    background-color: #E63946;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 2px solid transparent;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bt:hover {
+    background-color: transparent;
+    border-color: white;
+    transform: scale(1.05);
+}
+
+/* Información general */
+.info {
+    margin: 4rem 2%;
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Cajas de servicios */
+.cajas {
+    background: white;
+    width: 100%;
+    max-width: 350px; /* Adjust for 3 columns */
+    flex-grow: 1;
+    margin: 0; /* Remove margin as gap is used in .cont */
+    font-size: 1rem;
+    border: none;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.cajas:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(230, 57, 70, 0.2);
+}
+
+.cajas h2 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    color: #E63946;
+}
+
+/* Secciones Extra */
+.extra, .extra2 {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin: 5rem auto;
+    max-width: 1200px;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+}
+
+.extra img, .extra2 img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    flex-shrink: 0;
+}
+
+.extra div, .extra2 div {
+    flex: 1 1 400px;
+    font-size: 1.1rem;
+}
+
+.extra h2, .extra2 h2 {
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+}
+
+.extra2 {
+    flex-direction: row-reverse;
+}
+
+/* Brands Section */
+.brands-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.brands-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.brand-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.brand-logos img {
+    max-height: 80px;
+    max-width: 200px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.brand-logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Sección Redes Sociales */
+.redes {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #fff;
+}
+.redes h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+.social-embeds {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* TikTok Card */
+.tiktok-card {
+    background: #010101; /* TikTok black */
+    border-radius: 20px;
+    padding: 2rem;
+    color: white;
+    width: 100%;
+    max-width: 380px;
+    min-width: 288px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tiktok-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.tiktok-card a {
+    text-decoration: none;
+    color: white;
+}
+.tiktok-card i {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: -1.5px -1.5px 0 #ff0050, 1.5px 1.5px 0 #00f2ea;
+}
+.tiktok-card h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+/* Instagram Card */
+.instagram-card {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    border-radius: 20px;
+    padding: 2rem;
+    color: white;
+    width: 100%;
+    max-width: 380px;
+    min-width: 288px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.instagram-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.instagram-card a {
+    text-decoration: none;
+    color: white;
+}
+.instagram-card i {
+    font-size: 4rem;
+}
+.instagram-card h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+/* Footer */
+footer {
+    background-color: #E63946; /* Dark Blue */
+    color: #f1faee; /* Lightest color */
+    padding: 3rem 2rem 1rem;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.footer-logo img {
+    width: 120px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.footer-contact h4, .footer-social h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+.footer-contact p {
+    margin-bottom: 0.5rem;
+}
+.footer-contact a, .footer-social a {
+    color: #f1faee;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-contact a:hover {
+    color: #dbdca8; /* Light Cyan */
+}
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+.social-icons a {
+    font-size: 1.8rem;
+}
+.social-icons a:hover {
+    color: #d7dca8;
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #9d4545; /* Muted Blue */
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Animaciones de scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos para la página de contacto */
+.cont-contact {
+    padding: 3rem 1rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+    text-align: center;
+}
+.cont-contact h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+.contact-card, .location-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-card:hover, .location-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(230, 57, 70, 0.2);
+}
+.contact-card {
+    text-align: center;
+}
+.contact-card h2, .location-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.contact-card a {
+    color: #1d3557;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.location-card {
+    grid-column: 1 / -1; /* Span full width */
+}
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 1rem;
+    height: 300px;
+}
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+    .menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .extra, .extra2 {
+        flex-direction: column;
+        text-align: center;
+    }
+    .extra img, .extra2 img {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-contact, .footer-social {
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    nav a {
+        margin-left: 0;
+    }
+    .cajas {
+        padding: 1.5rem;
+    }
+}
+
+/* Evitar que el body tenga scroll horizontal */
+html, body {
+    overflow-x: hidden;
+}
+    </style>
+
+<body>        
+        <div class="menu">
+            <a href="index.html"><img src="logo.jpg" alt="logo"></a>
+            <nav>
+                <a href="tel:+34953027642"><i class="fas fa-phone-alt"></i></a>
+                <a href="https://wa.me/34953027642" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:talleresbielamotor@gmail.com"><i class="fas fa-envelope"></i></a>
+            </nav>
+        </div>
+
+        <hr>
+        <div class="inicio">
+            <div class="txt">
+                            
+            <h1>Taller Biela Motor</h1>
+            <p>En Talleres Biela Motor, nos especializamos en el mantenimiento y reparación de vehículos de motor, asegurando un servicio de calidad y confianza para tu tranquilidad.</p>
+            <br>
+            
+            <a class="bt" href="contacto.html">Contáctanos</a>
+
+            </div>
+        </div>
+
+        <div class="info reveal">
+            <h2>Servicios de Mantenimiento y Reparación</h2>
+            <br>
+            <p>Ofrecemos una amplia gama de servicios para mantener tu vehículo en óptimas condiciones, desde mantenimiento preventivo hasta reparaciones especializadas.</p>
+        </div>
+
+        <div class="cont">
+
+        <div class="cajas reveal">
+            <h2>Mantenimiento Preventivo</h2>
+
+            <p>Revisiones periódicas para evitar fallos inesperados y prolongar la vida útil de tu vehículo.</p>
+        </div>
+
+         <div class="cajas reveal">
+            <h2>Reparaciones Especializadas</h2>
+
+            <p>Soluciones precisas para problemas mecánicos y electrónicos, utilizando tecnología avanzada..</p>
+        </div>
+
+        <div class="cajas reveal">
+            <h2>Atención Personalizada</h2>
+
+            <p>Asesoramiento experto y atención al detalle en cada servicio que realizamos.</p>
+        </div>
+
+        <div class="cajas reveal">
+            <h2>Repuestos de Calidad</h2>
+
+            <p>Utilizamos repuestos originales y de alta calidad para garantizar el rendimiento de tu vehículo.</p>
+        </div>
+       
+        <div class="cajas reveal">
+            <h2>Compromiso con la Seguridad</h2>
+
+            <p>Nos aseguramos de que tu vehículo cumpla con los estándares de seguridad y funcionamiento.</p>
+        </div>
+
+        </div>
+
+        <div class="extra reveal">
+            <img src="taller-portada.png" alt="servicio">
+            <div>
+            <h2>Mantenimiento Preventivo Integral</h2>
+            <p>El mantenimiento preventivo es esencial para evitar reparaciones costosas y prolongar la vida útil de tu vehículo. En Taller Biela Motor, realizamos revisiones periódicas que incluyen cambios de aceite, revisión de frenos, suspensión y más. Nuestro objetivo es detectar posibles fallos antes de que se conviertan en problemas mayores.</p>
+            </div>
+        </div>
+
+        <div class="extra2 reveal">
+            <img src="taller-quienessomos.png" alt="servicio">
+            <div>
+            <h2>¿Quiénes Somos?</h2>
+            <p>Con años de experiencia en el sector, en Taller Biela Motor, nos comprometemos a ofrecer servicios de mantenimiento y reparación de vehículos con la más alta calidad. Nuestro equipo de técnicos especializados trabaja con pasión y dedicación para garantizar que tu vehículo esté siempre en las mejores condiciones.</p>
+        </div>
+        </div>
+
+        <div class="brands-section reveal">
+            <h2>Nuestras Marcas Asociadas</h2>
+            <div class="brand-logos">
+                <img src="nexusauto.png" alt="Nexusauto Logo">
+                <img src="Castrol-Logo.png" alt="Castrol Logo">
+            </div>
+        </div>
+
+        <div class="redes reveal">
+            <h2>Síguenos en Nuestras Redes</h2>
+            <div class="social-embeds">
+                <div class="tiktok-card">
+                    <a href="https://www.tiktok.com/@talleresbielamotor" target="_blank">
+                        <i class="fab fa-tiktok"></i>
+                        <h3>Ver en TikTok</h3>
+                        <p>@talleresbielamotor</p>
+                    </a>
+                </div>
+
+                <div class="instagram-card">
+                    <a href="https://www.instagram.com/talleresbielamotor/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        <h3>Ver en Instagram</h3>
+                        <p>@talleresbielamotor</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo.jpg" alt="Taller Biela Motor Logo">
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 42 C. Virgen de la Cabeza, Jódar, Andalucía España</p>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:+34953027642">+34 953 02 76 42</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:talleresbielamotor@gmail.com">talleresbielamotor@gmail.com</a></p>
+            </div>
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    
+                    <a href="https://www.tiktok.com/@talleresbielamotor" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/talleresbielamotor/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Taller Biela Motor. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function reveal() {
+  const reveals = document.querySelectorAll(".reveal");
+
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    const elementVisible = 100; // px
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      // Optional: remove class to re-trigger animation on scroll up
+      // reveals[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+// Trigger on load as well
+reveal();
+    </script>
+</body>
+</html>

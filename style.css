@@ -1,0 +1,596 @@
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600;700&display=swap');
+
+/* Reset de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo base de la página */
+body {
+    background-color: #f8f9fa;
+    color: #343a40;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+/* Contenedor principal */
+.cont {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Align items for same height */
+    text-align: center;
+    flex-wrap: wrap; 
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1.5rem;
+}
+
+/* Menú de navegación */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Logo */
+.menu img {
+    width: 100px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.menu img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo de los enlaces en el menú */
+nav a {
+    margin-left: 0.5rem;
+    text-decoration: none;
+    color: white;
+    background-color: #E63946; /* Strong Red */
+    padding: 0.6rem 1.1rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #d62828;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Sección de inicio */
+.inicio {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://raw.githubusercontent.com/bielamotor/blog/refs/heads/main/taller-portada.png) center/cover no-repeat;
+    padding: 8vw 5vw;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.txt {
+    max-width: 800px;
+}
+
+/* Texto dentro de inicio */
+.txt h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.txt p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin: 1rem 0 2rem;
+}
+
+/* Botones */
+.bt {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    background-color: #E63946;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 2px solid transparent;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bt:hover {
+    background-color: transparent;
+    border-color: white;
+    transform: scale(1.05);
+}
+
+/* Información general */
+.info {
+    margin: 4rem 2%;
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Cajas de servicios */
+.cajas {
+    background: white;
+    width: 100%;
+    max-width: 350px; /* Adjust for 3 columns */
+    flex-grow: 1;
+    margin: 0; /* Remove margin as gap is used in .cont */
+    font-size: 1rem;
+    border: none;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.cajas:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(230, 57, 70, 0.2);
+}
+
+.cajas h2 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    color: #E63946;
+}
+
+/* Secciones Extra */
+.extra, .extra2 {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin: 5rem auto;
+    max-width: 1200px;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+}
+
+.extra img, .extra2 img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    flex-shrink: 0;
+}
+
+.extra div, .extra2 div {
+    flex: 1 1 400px;
+    font-size: 1.1rem;
+}
+
+.extra h2, .extra2 h2 {
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+}
+
+.extra2 {
+    flex-direction: row-reverse;
+}
+
+/* Brands Section */
+.brands-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.brands-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.brand-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.brand-logos img {
+    max-height: 80px;
+    max-width: 200px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.brand-logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Sección Redes Sociales */
+.redes {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #fff;
+}
+.redes h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+.social-embeds {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* TikTok Card */
+.tiktok-card {
+    background: #010101; /* TikTok black */
+    border-radius: 20px;
+    padding: 2rem;
+    color: white;
+    width: 100%;
+    max-width: 380px;
+    min-width: 288px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tiktok-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.tiktok-card a {
+    text-decoration: none;
+    color: white;
+}
+.tiktok-card i {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: -1.5px -1.5px 0 #ff0050, 1.5px 1.5px 0 #00f2ea;
+}
+.tiktok-card h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+/* Instagram Card */
+.instagram-card {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    border-radius: 20px;
+    padding: 2rem;
+    color: white;
+    width: 100%;
+    max-width: 380px;
+    min-width: 288px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.instagram-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.instagram-card a {
+    text-decoration: none;
+    color: white;
+}
+.instagram-card i {
+    font-size: 4rem;
+}
+.instagram-card h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+/* Footer */
+footer {
+    background-color: #cc4040; /* Dark Blue */
+    color: #f1faee; /* Lightest color */
+    padding: 3rem 2rem 1rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.footer-logo img {
+    width: 120px;
+    margin-bottom: 1rem;
+}
+
+.footer-contact h4, .footer-social h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+.footer-contact p {
+    margin-bottom: 0.5rem;
+}
+.footer-contact a, .footer-social a {
+    color: #f1faee;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-contact a:hover {
+    color: #e8eb55; /* Light Cyan */
+}
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+.social-icons a {
+    font-size: 1.8rem;
+}
+.social-icons a:hover {
+    color: #e8eb55;
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #ffffff; /* Muted Blue */
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Animaciones de scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 900px;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+.close-modal {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #E63946;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: #1d3557;
+}
+
+.contact-grid-modal {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-card-modal, .location-card-modal {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.contact-card-modal h2, .location-card-modal h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #343a40;
+}
+
+.contact-card-modal a {
+    color: #1d3557;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.location-card-modal {
+    grid-column: 1 / -1;
+}
+
+.map-container-modal {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 1rem;
+    height: 250px;
+}
+
+.map-container-modal iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Estilos para la página de contacto */
+.cont-contact {
+    padding: 3rem 1rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+    text-align: center;
+}
+.cont-contact h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+.contact-card, .location-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-card:hover, .location-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(230, 57, 70, 0.2);
+}
+.contact-card {
+    text-align: center;
+}
+.contact-card h2, .location-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.contact-card a {
+    color: #1d3557;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.location-card {
+    grid-column: 1 / -1; /* Span full width */
+}
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 1rem;
+    height: 300px;
+}
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+    .menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .extra, .extra2 {
+        flex-direction: column;
+        text-align: center;
+    }
+    .extra img, .extra2 img {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-contact, .footer-social {
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    nav a {
+        margin-left: 0;
+    }
+    .cajas {
+        padding: 1.5rem;
+    }
+}
+
+/* Evitar que el body tenga scroll horizontal */
+html, body {
+    overflow-x: hidden;
+}
